@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقترح تطوير الحضور الرقمي وخطة النمو — مؤسسة الحل الذكي</title>
+
+    <link class="rounded-full" rel="icon" type="image/png" href="https://i.postimg.cc/RCKLxc5q/logo-gold.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Cairo', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            gold: '#D4A85A', goldLight: '#E8C989', goldDark: '#B28741',
+                            teal: '#F5F5F3', tealDark: '#062825', bgColor: '#F5F5F3',
+                            lightBeige: '#E6DFD5', white: '#FFFFFF', green: '#25D366',
+                            ok: '#1E7A5A', warn: '#B28741', alert: '#9C4A3C',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #F5F5F3; }
+        ::-webkit-scrollbar-thumb { background: #E6DFD5; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4A85A; }
+
+        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(6, 40, 37, 0.05);
+            border-color: rgba(212, 168, 90, 0.4);
+            background: #FFFFFF;
+        }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+
+        body { font-weight: 400; }
+        h1, h2, h3, h4 { font-weight: 600; color: #062825; }
+        i { opacity: 0.9; }
+
+        .custom-bullets li { position: relative; padding-right: 1.75rem; }
+        .custom-bullets li::before {
+            content: "\f0da";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            color: #D4A85A;
+            font-size: 0.75rem;
+            top: 2px;
+        }
+
+        table { border-collapse: separate; border-spacing: 0; }
+
+        @media print { .no-print { display: none; } body { background: #fff; } }
+        @media (prefers-reduced-motion: reduce) { .animate-fade-in, .card-hover { animation: none; transition: none; } }
+    </style>
+</head>
+
+<body class="bg-brand-bgColor text-brand-tealDark font-sans antialiased selection:bg-brand-gold/20 selection:text-brand-tealDark relative min-h-screen overflow-x-hidden">
+
+    <div class="fixed inset-0 z-[-1] opacity-50"
+        style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNkNGU4NWEiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTAgMGg0MHY0MEgwVjB6bTIwIDIwaDIwdjIwSDIWMjB6TTAgMjBoMjB2MjBIMFYyMHoyMCAwaDIwdjIwSDIwVjB6Ii8+PC9nPjwvZz48L3N2Zz4=');">
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 md:px-6 py-10 space-y-12 relative z-10">
+
+        <!-- ============ HEADER ============ -->
+        <header class="flex flex-col items-center text-center space-y-6 border-b border-brand-lightBeige pb-8 animate-fade-in">
+            <div class="mb-2 bg-brand-white p-5 rounded-2xl border border-brand-lightBeige shadow-sm">
+                <img src="https://i.postimg.cc/RCKLxc5q/logo-gold.png" alt="شعار غين الرقمية" class="h-16 w-auto object-contain">
+            </div>
+            <div class="space-y-3">
+                <span class="bg-brand-gold/10 text-brand-goldDark border border-brand-gold/20 text-xs px-4 py-1.5 rounded-full font-semibold">تاريخ
+                    المقترح: 19 أغسطس 2026</span>
+                <h1 class="text-3xl md:text-4xl leading-relaxed">
+                    مقترح تطوير الحضور الرقمي وخطة النمو <br>
+                    <span class="text-brand-gold">مؤسسة الحل الذكي لأدوات ومعدات السلامة</span>
+                </h1>
+            </div>
+            <p class="text-sm md:text-base text-brand-tealDark/80 max-w-3xl leading-loose">
+                مراجعة مستقلة للحضور الرقمي الحالي للمؤسسة، تليها خطة تطوير مرحلية. يبدأ المستند بتشخيص الوضع القائم،
+                ثم ينتقل إلى <strong>هيكل الموقع المقترح</strong> و<strong>خريطة المحتوى التفصيلية</strong> بوصفهما
+                المخرَج الأول القابل للتنفيذ، وينتهي بخطة المراحل ومؤشرات القياس.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3 w-full pt-4 text-right">
+                <div class="bg-brand-white p-4 rounded-xl border border-brand-lightBeige">
+                    <p class="text-[11px] text-brand-tealDark/60 mb-1">الجهة</p>
+                    <p class="text-xs font-semibold">مؤسسة الحل الذكي</p>
+                </div>
+                <div class="bg-brand-white p-4 rounded-xl border border-brand-lightBeige">
+                    <p class="text-[11px] text-brand-tealDark/60 mb-1">مجال النشاط</p>
+                    <p class="text-xs font-semibold">السلامة والحريق والكهروميكانيك</p>
+                </div>
+                <div class="bg-brand-white p-4 rounded-xl border border-brand-lightBeige">
+                    <p class="text-[11px] text-brand-tealDark/60 mb-1">نطاق التغطية</p>
+                    <p class="text-xs font-semibold">ينبع · جدة · الرياض · الدمام · الطائف</p>
+                </div>
+                <div class="bg-brand-white p-4 rounded-xl border-2 border-brand-gold/40">
+                    <p class="text-[11px] text-brand-tealDark/60 mb-1">المنصة التقنية</p>
+                    <p class="text-xs font-semibold text-brand-goldDark">ووردبريس <span dir="ltr">(WordPress)</span></p>
+                </div>
+                <div class="bg-brand-white p-4 rounded-xl border border-brand-lightBeige">
+                    <p class="text-[11px] text-brand-tealDark/60 mb-1">طبيعة المستند</p>
+                    <p class="text-xs font-semibold">مقترح تطوير وخطة تنفيذ</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============ SCOPE NOTICE ============ -->
+        <section class="bg-brand-white border-2 border-brand-alert/30 rounded-2xl p-7 md:p-9 shadow-sm space-y-5">
+            <div class="flex items-center gap-4 border-b border-brand-lightBeige pb-5">
+                <div class="bg-brand-alert/10 p-3.5 rounded-xl border border-brand-alert/20 text-brand-alert">
+                    <i class="fas fa-circle-info text-2xl"></i>
+                </div>
+                <h3 class="text-xl text-brand-tealDark">نطاق هذه المراجعة وحدودها</h3>
+            </div>
+
+            <div class="text-sm text-brand-tealDark/90 leading-loose space-y-3">
+                <p>
+                    أُعدّ هذا المقترح استنادًا إلى مصدرين فقط: <strong>الملف التعريفي المطبوع</strong> المستلم من
+                    المؤسسة، و<strong>فحص الموقع المنشور حاليًا</strong> على النطاق
+                    <span dir="ltr" class="font-semibold">smartsolutionest.pro</span>، إضافة إلى ما هو متاح للعموم في
+                    محركات البحث.
+                </p>
+                <p class="font-semibold text-brand-alert">
+                    لم نطّلع على أي بيانات داخلية: لا أرقام مبيعات، ولا توزيع الإيرادات بين المشاريع وعقود الصيانة،
+                    ولا قائمة الاعتمادات الفعلية. لذلك فإن كل ما يرد هنا بوصفه «ناقصًا» يعني أنه غير ظاهر للعميل
+                    الخارجي، لا أنه غير موجود لدى المؤسسة.
+                </p>
+                <p>
+                    البنود التي تحتاج تأكيدًا من المؤسسة مجمّعة في قسم <strong>«المطلوب من المؤسسة»</strong> في نهاية
+                    المستند، وهي التي ستضبط النطاق النهائي والجدول الزمني.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ EXECUTIVE SUMMARY ============ -->
+        <section class="bg-brand-white border border-brand-lightBeige rounded-2xl p-8 md:p-10 shadow-sm space-y-6">
+            <div class="flex items-center gap-4 border-b border-brand-lightBeige pb-5">
+                <div class="bg-brand-gold/10 p-3.5 rounded-xl border border-brand-gold/20 text-brand-goldDark">
+                    <i class="fas fa-file-lines text-2xl"></i>
+                </div>
+                <h3 class="text-xl text-brand-tealDark">الملخص التنفيذي</h3>
+            </div>
+
+            <div class="text-brand-tealDark/90 leading-loose space-y-4 text-sm">
+                <p>
+                    تمتلك المؤسسة ما لا تملكه أغلب المنافسة: أكثر من عشرين عامًا من العمل، وخمسة فروع، وقائمة عملاء
+                    تضم وزارة التعليم وحديد ينبع وسانكو ومصنع ينبع للكيماويات المتخصصة وهيبكو السعودية ونوفوتيل والنهدي
+                    وتويوتا. هذا رصيد ثقيل، لكنه <strong>غير مرئي رقميًا بالكامل تقريبًا</strong>.
+                </p>
+                <p>
+                    الموقع المنشور حاليًا مبني على أداة إنشاء آلي، ويُحمّل محتواه بالكامل عبر المتصفح، وعنوان الصفحة
+                    فيه ما يزال هو العنوان الافتراضي للأداة. عمليًا: <strong>لا تُفهرسه محركات البحث</strong>، والبحث
+                    باسم المؤسسة أو نطاقها لا يُرجع أي نتيجة تخصّها.
+                </p>
+                <p>
+                    وفي المقابل، يشير الملف التعريفي المطبوع إلى نطاق وبريد مختلفين تمامًا عن الموقع الحيّ. أي أن
+                    كل بروشور سُلِّم لعميل خلال السنوات الماضية كان يوجّهه إلى عنوان لا يصل إلى المؤسسة.
+                </p>
+                <p class="font-semibold">
+                    التوصية: البدء بتوحيد الهوية الرقمية والنطاق قبل أي عمل تصميمي — ثم بناء موقع مفهرس على منصة
+                    <strong>ووردبريس</strong> باستضافة مستقلة تملكها المؤسسة، مبني على هيكل معلومات يطابق طريقة بحث
+                    العميل الفعلية، لا طريقة تنظيم المؤسسة لأقسامها.
+                </p>
+                <p class="text-brand-goldDark font-semibold">
+                    الأثر الأكبر ليس في الموقع نفسه، بل في تحويل التموضع من «مورّد معدات» إلى «شريك امتثال»، وبناء
+                    سجل القاعدة المركّبة الذي يحوّل عشرين عامًا من التركيبات إلى إيراد صيانة متكرر.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ DIAGNOSIS ============ -->
+        <section class="space-y-8">
+            <div class="text-center">
+                <h2 class="text-2xl mb-2">تشخيص الوضع الرقمي الحالي</h2>
+                <p class="text-sm text-brand-tealDark/60">ما يراه العميل المحتمل اليوم حين يبحث عن المؤسسة</p>
+            </div>
+
+            <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-4 md:p-6 shadow-sm overflow-x-auto">
+                <table class="w-full text-right text-xs md:text-sm min-w-[820px]">
+                    <thead>
+                        <tr class="bg-brand-tealDark text-brand-white">
+                            <th class="p-3 rounded-tr-xl font-semibold">البند</th>
+                            <th class="p-3 font-semibold">الوضع القائم</th>
+                            <th class="p-3 font-semibold">الأثر التجاري</th>
+                            <th class="p-3 rounded-tl-xl font-semibold">الأولوية</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-brand-tealDark/90">
+                        <tr class="border-b border-brand-lightBeige bg-brand-alert/[0.06]">
+                            <td class="p-3 font-semibold">النطاق والهوية الرقمية</td>
+                            <td class="p-3">ثلاثة عناوين متداولة: النطاق الحيّ <span dir="ltr">.pro</span>، ونطاق آخر
+                                مطبوع في الملف التعريفي يحمل خطأ إملائيًا، واسم تجاري تتشارك فيه خمس جهات سعودية أخرى
+                                على الأقل</td>
+                            <td class="p-3">العميل الذي يحمل البروشور لا يصل إلى المؤسسة. ولاحقة <span dir="ltr">.pro</span>
+                                تُقرأ ضعيفة في المشتريات المؤسسية</td>
+                            <td class="p-3 text-brand-alert font-bold whitespace-nowrap">حرجة</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">البنية التقنية للموقع</td>
+                            <td class="p-3">تطبيق أحادي الصفحة من أداة إنشاء آلي، يُبنى محتواه في المتصفح، وعنوان
+                                الصفحة ما زال افتراضيًا</td>
+                            <td class="p-3">الموقع غير قابل للفهرسة فعليًا — أي إنفاق تسويقي عليه يذهب دون عائد عضوي</td>
+                            <td class="p-3 text-brand-alert font-bold whitespace-nowrap">حرجة</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">الظهور في نتائج البحث</td>
+                            <td class="p-3">البحث باسم المؤسسة أو نطاقها لا يُرجع نتيجة تخصّها؛ الأسماء المشابهة تحتلّ
+                                الصفحة الأولى</td>
+                            <td class="p-3">صفر عملاء محتملين من القناة العضوية، وهي أعلى القنوات نية شرائية في هذا
+                                المجال</td>
+                            <td class="p-3 text-brand-alert font-bold whitespace-nowrap">حرجة</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">بنية الملف التعريفي</td>
+                            <td class="p-3">ثماني صفحات لكتالوج المنتجات وشعارات الموردين، مقابل صفحتين لقائمة العملاء
+                                بلا نطاق أو حجم أو تاريخ، وبلا دراسة حالة واحدة</td>
+                            <td class="p-3">يقدّم المؤسسة بوصفها تاجرًا، بينما المشتري يشتري تخفيض مخاطرة لا معدات</td>
+                            <td class="p-3 text-brand-warn font-bold whitespace-nowrap">عالية</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">الاعتمادات المعروضة</td>
+                            <td class="p-3">المعروض: سجل تجاري، وغرفة تجارية، وشهادة ضريبية، وأربع رخص بلدية. غير
+                                معروض: اعتماد الدفاع المدني، وتصنيف المقاولين، والتسجيل في اعتماد، وأيزو ٩٠٠١</td>
+                            <td class="p-3">الاعتمادات المعروضة لا تفتح مناقصات؛ والاعتمادات التي تفتحها غير ظاهرة</td>
+                            <td class="p-3 text-brand-alert font-bold whitespace-nowrap">حرجة</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">نموذج الإيراد المعروض</td>
+                            <td class="p-3">«أعمال الصيانة والعقود الدورية» بند واحد ضمن ست خدمات، بلا صفحة ولا عرض
+                                ولا مسار تواصل خاص</td>
+                            <td class="p-3">القاعدة المركّبة عبر عشرين عامًا لا تُستثمَر كإيراد متكرر</td>
+                            <td class="p-3 text-brand-warn font-bold whitespace-nowrap">عالية</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">الحضور المحلي</td>
+                            <td class="p-3">لا يوجد ملف نشاط تجاري موثّق على الخرائط لأيٍّ من الفروع الخمسة</td>
+                            <td class="p-3">فقدان أعلى مصدر استفسارات محلية لهذا النوع من النشاط</td>
+                            <td class="p-3 text-brand-warn font-bold whitespace-nowrap">عالية</td>
+                        </tr>
+                        <tr class="bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">تركيز الانتشار</td>
+                            <td class="p-3">خمس مدن معروضة بوزن متساوٍ، رغم أن قائمة العملاء الصناعيين تتركّز كلها في
+                                نطاق ينبع</td>
+                            <td class="p-3">تشتيت الجهد التسويقي على أسواق المؤسسة فيها الأضعف تنافسيًا</td>
+                            <td class="p-3 text-brand-warn font-bold whitespace-nowrap">متوسطة</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-brand-teal border border-brand-lightBeige rounded-2xl p-6 shadow-sm">
+                <p class="text-xs text-brand-tealDark/80 leading-loose">
+                    <i class="fas fa-lightbulb text-brand-gold ml-1"></i>
+                    <strong>ملاحظة منهجية:</strong> البند الأول ليس مسألة شكلية. اسم «الحل الذكي» يتنازعه في السوق
+                    السعودي عدد من الجهات في مجالات مختلفة تمامًا، وبعضها يحتلّ الصفحة الأولى بالفعل. توحيد النطاق
+                    وتثبيته هو الشرط الذي يجعل عشرين عامًا من السمعة قابلة للاسترجاع رقميًا.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ REPOSITIONING ============ -->
+        <section class="space-y-8 pt-2">
+            <div class="text-center">
+                <h2 class="text-2xl mb-2">إعادة التموضع — من مورّد معدات إلى شريك امتثال</h2>
+                <p class="text-sm text-brand-tealDark/60">المبدأ الذي يُبنى عليه هيكل الموقع وخريطة المحتوى بعد قليل</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-7 shadow-sm space-y-4">
+                    <h4 class="text-base flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-alert rounded-full block"></span> الرسالة الحالية
+                    </h4>
+                    <ul class="text-xs text-brand-tealDark/80 space-y-2.5 leading-relaxed custom-bullets">
+                        <li>«نورّد أنظمة من علامات عالمية» — رسالة تاجر، وقابلة للتقليد من أي منافس.</li>
+                        <li>الشعارات في الواجهة، والعملاء في الخلفية بلا تفاصيل.</li>
+                        <li>لا رقم واحد يُثبت الحجم: كم موقعًا تحت العقد، كم جهازًا تحت الصيانة، كم زمن الاستجابة.</li>
+                        <li>المنافسة على السعر لأن لا شيء آخر يميّز العرض.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-white border-2 border-brand-gold/30 rounded-2xl p-7 shadow-sm space-y-4">
+                    <h4 class="text-base flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-gold rounded-full block"></span> الرسالة المقترحة
+                    </h4>
+                    <ul class="text-xs text-brand-tealDark/80 space-y-2.5 leading-relaxed custom-bullets">
+                        <li>«منشأتك جاهزة لفحص الدفاع المدني — ونحن نضمن بقاءها كذلك» — رسالة تخاطب الخوف الحقيقي.</li>
+                        <li>العميل يشتري تجنّب الإغلاق والغرامة، لا يشتري رشاشًا أو لوحة إنذار.</li>
+                        <li>الإثبات في الواجهة: نطاق مشروع حقيقي، وصور، ونوع النظام، وتاريخ التنفيذ.</li>
+                        <li>المنافسة على الموثوقية وسرعة الاستجابة والتوثيق — وهي ميادين يصعب تقليدها.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 md:p-7 shadow-sm">
+                <p class="text-xs text-brand-tealDark/85 leading-loose">
+                    <i class="fas fa-arrow-turn-up text-brand-gold ml-1"></i>
+                    <strong>ما يترتّب على ذلك عمليًا:</strong> هيكل الموقع لن يُبنى حول أقسام المؤسسة (حريق / تكييف /
+                    كهروميكانيك)، بل حول <strong>الطريقة التي يبحث بها مدير المنشأة فعليًا</strong>: باسم النظام الذي
+                    يحتاجه، أو باسم قطاعه، أو باسم مدينته، أو بالمشكلة التي تواجهه — أي أربع طبقات دخول مستقلة إلى
+                    الموقع بدل مدخل واحد.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ SITE IA DIAGRAM ============ -->
+        <section class="space-y-8 pt-2">
+            <div class="text-center">
+                <h2 class="text-2xl mb-2">هيكل الموقع المقترح</h2>
+                <p class="text-sm text-brand-tealDark/60">أربع طبقات دخول مستقلة، تصبّ جميعها في صفحتَي التحويل —
+                    المسارات الذهبية هي صفحات الإيراد ذات الأولوية</p>
+            </div>
+
+            <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-4 md:p-6 shadow-sm">
+                <div class="overflow-x-auto">
+                    <svg viewBox="0 0 1900 950" xmlns="http://www.w3.org/2000/svg" class="min-w-[900px] w-full h-auto"
+                        font-family="Cairo, sans-serif" direction="rtl" role="img"
+                        aria-label="مخطط هيكل موقع مؤسسة الحل الذكي: الصفحة الرئيسية تتفرّع إلى سبعة أقسام هي من نحن والأنظمة والخدمات والقطاعات والفروع وأعمالنا والمركز المعرفي، وتصبّ جميعها في صفحات التحويل">
+
+                        <!-- HOME -->
+                        <rect x="750" y="28" width="400" height="58" rx="14" fill="#062825" />
+                        <text x="950" y="65" text-anchor="middle" fill="#FFFFFF" font-size="22" font-weight="700">الصفحة الرئيسية</text>
+
+                        <!-- spine from home to bus -->
+                        <path d="M950,86 L950,126" stroke="#062825" stroke-width="2.5" fill="none" />
+                        <!-- bus -->
+                        <path d="M146,126 L1754,126" stroke="#062825" stroke-width="2.5" fill="none" />
+
+                        <!-- drops to each column -->
+                        <path d="M1754,126 L1754,166" stroke="#062825" stroke-width="2.5" fill="none" />
+                        <path d="M1486,126 L1486,166" stroke="#062825" stroke-width="2.5" fill="none" />
+                        <path d="M1218,126 L1218,166" stroke="#062825" stroke-width="2.5" fill="none" />
+                        <path d="M950,126 L950,166" stroke="#062825" stroke-width="2.5" fill="none" />
+                        <path d="M682,126 L682,166" stroke="#062825" stroke-width="2.5" fill="none" />
+                        <path d="M414,126 L414,166" stroke="#062825" stroke-width="2.5" fill="none" />
+                        <path d="M146,126 L146,166" stroke="#062825" stroke-width="2.5" fill="none" />
+
+                        <!-- column spines -->
+                        <path d="M1754,214 L1754,442" stroke="#E6DFD5" stroke-width="2" fill="none" />
+                        <path d="M1486,214 L1486,794" stroke="#E6DFD5" stroke-width="2" fill="none" />
+                        <path d="M1218,214 L1218,494" stroke="#E6DFD5" stroke-width="2" fill="none" />
+                        <path d="M950,214 L950,598" stroke="#E6DFD5" stroke-width="2" fill="none" />
+                        <path d="M682,214 L682,494" stroke="#E6DFD5" stroke-width="2" fill="none" />
+                        <path d="M414,214 L414,390" stroke="#E6DFD5" stroke-width="2" fill="none" />
+                        <path d="M146,214 L146,390" stroke="#E6DFD5" stroke-width="2" fill="none" />
+
+                        <!-- ===== COLUMN HEADERS ===== -->
+                        <g font-size="18" font-weight="700" text-anchor="middle" fill="#FFFFFF">
+                            <rect x="1630" y="166" width="248" height="48" rx="11" fill="#0C3B36" />
+                            <text x="1754" y="197">من نحن</text>
+                            <rect x="1362" y="166" width="248" height="48" rx="11" fill="#0C3B36" />
+                            <text x="1486" y="197">الأنظمة والحلول</text>
+                            <rect x="1094" y="166" width="248" height="48" rx="11" fill="#0C3B36" />
+                            <text x="1218" y="197">الخدمات</text>
+                            <rect x="826" y="166" width="248" height="48" rx="11" fill="#0C3B36" />
+                            <text x="950" y="197">القطاعات</text>
+                            <rect x="558" y="166" width="248" height="48" rx="11" fill="#0C3B36" />
+                            <text x="682" y="197">الفروع</text>
+                            <rect x="290" y="166" width="248" height="48" rx="11" fill="#0C3B36" />
+                            <text x="414" y="197">أعمالنا</text>
+                            <rect x="22" y="166" width="248" height="48" rx="11" fill="#0C3B36" />
+                            <text x="146" y="197">المركز المعرفي</text>
+                        </g>
+
+                        <!-- ===== CHILDREN ===== -->
+                        <g font-size="14" text-anchor="middle" fill="#062825">
+
+                            <!-- من نحن -->
+                            <rect x="1630" y="232" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1754" y="259">تاريخنا وسياسة الجودة</text>
+                            <rect x="1630" y="284" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1754" y="311">الاعتمادات والتراخيص</text>
+                            <rect x="1630" y="336" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1754" y="363">الموردون والشركاء</text>
+                            <rect x="1630" y="388" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1754" y="415">انضم إلى الفريق</text>
+
+                            <!-- الأنظمة -->
+                            <rect x="1362" y="232" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1486" y="259">أنظمة إنذار الحريق</text>
+                            <rect x="1362" y="284" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1486" y="311">رشاشات مكافحة الحريق</text>
+                            <rect x="1362" y="336" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1486" y="363">الإطفاء بالغاز</text>
+                            <rect x="1362" y="388" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1486" y="415">أنظمة الرغوة</text>
+                            <rect x="1362" y="440" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1486" y="467">مضخات الحريق</text>
+                            <rect x="1362" y="492" width="248" height="42" rx="9" fill="#D4A85A" stroke="#B28741" stroke-width="1.5" />
+                            <text x="1486" y="519" font-weight="600">إطفاء مطابخ المطاعم</text>
+                            <rect x="1362" y="544" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1486" y="571">الكشف المبكر للدخان</text>
+                            <rect x="1362" y="596" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1486" y="623">التكييف المركزي والشلر</text>
+                            <rect x="1362" y="648" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1486" y="675">التكييف المتغير VRF</text>
+                            <rect x="1362" y="700" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1486" y="727">تصنيع مجاري الهواء</text>
+                            <rect x="1362" y="752" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1486" y="779">الأعمال الكهروميكانيكية</text>
+
+                            <!-- الخدمات -->
+                            <rect x="1094" y="232" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1218" y="259">التصميم والدراسة</text>
+                            <rect x="1094" y="284" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1218" y="311">التوريد والتركيب</text>
+                            <rect x="1094" y="336" width="248" height="42" rx="9" fill="#D4A85A" stroke="#B28741" stroke-width="1.5" />
+                            <text x="1218" y="363" font-weight="600">عقود الصيانة السنوية</text>
+                            <rect x="1094" y="388" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="1218" y="415">الفحص وإعادة التعبئة</text>
+                            <rect x="1094" y="440" width="248" height="42" rx="9" fill="#D4A85A" stroke="#B28741" stroke-width="1.5" />
+                            <text x="1218" y="467" font-weight="600">جاهزية الدفاع المدني</text>
+
+                            <!-- القطاعات -->
+                            <rect x="826" y="232" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="950" y="259">المصانع والبتروكيماويات</text>
+                            <rect x="826" y="284" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="950" y="311">الفنادق والمنتجعات</text>
+                            <rect x="826" y="336" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="950" y="363">المدارس والمنشآت التعليمية</text>
+                            <rect x="826" y="388" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="950" y="415">المستودعات واللوجستيات</text>
+                            <rect x="826" y="440" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="950" y="467">المطاعم والمطابخ التجارية</text>
+                            <rect x="826" y="492" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="950" y="519">المنشآت الصحية والصيدليات</text>
+                            <rect x="826" y="544" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="950" y="571">المعارض ومراكز الخدمة</text>
+
+                            <!-- الفروع -->
+                            <rect x="558" y="232" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="682" y="259">ينبع — المقر الرئيسي</text>
+                            <rect x="558" y="284" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="682" y="311">جدة</text>
+                            <rect x="558" y="336" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="682" y="363">الرياض</text>
+                            <rect x="558" y="388" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="682" y="415">الدمام</text>
+                            <rect x="558" y="440" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="682" y="467">الطائف</text>
+
+                            <!-- أعمالنا -->
+                            <rect x="290" y="232" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="414" y="259">دراسات الحالة</text>
+                            <rect x="290" y="284" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="414" y="311">عملاؤنا</text>
+                            <rect x="290" y="336" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="414" y="363">معرض المشاريع</text>
+
+                            <!-- المركز المعرفي -->
+                            <rect x="22" y="232" width="248" height="42" rx="9" fill="#D4A85A" stroke="#B28741" stroke-width="1.5" />
+                            <text x="146" y="259" font-weight="600">دليل جاهزية الدفاع المدني</text>
+                            <rect x="22" y="284" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="146" y="311">المقالات الفنية</text>
+                            <rect x="22" y="336" width="248" height="42" rx="9" fill="#F5F5F3" stroke="#E6DFD5" stroke-width="1.5" />
+                            <text x="146" y="363">الأسئلة الشائعة</text>
+                        </g>
+
+                        <!-- ===== CONVERSION LAYER ===== -->
+                        <path d="M950,616 L950,846" stroke="#062825" stroke-width="2" fill="none" stroke-dasharray="7 6" opacity="0.45" />
+                        <rect x="22" y="846" width="1856" height="76" rx="14" fill="#062825" />
+                        <text x="1700" y="893" text-anchor="middle" fill="#D4A85A" font-size="17" font-weight="700">طبقة التحويل</text>
+                        <g font-size="16" text-anchor="middle" fill="#062825" font-weight="600">
+                            <rect x="1130" y="866" width="330" height="38" rx="19" fill="#D4A85A" />
+                            <text x="1295" y="891">اطلب عرض سعر</text>
+                            <rect x="770" y="866" width="330" height="38" rx="19" fill="#E8C989" />
+                            <text x="935" y="891">احجز زيارة فحص</text>
+                            <rect x="410" y="866" width="330" height="38" rx="19" fill="#E8C989" />
+                            <text x="575" y="891">تواصل عبر واتساب</text>
+                        </g>
+                        <text x="200" y="891" text-anchor="middle" fill="#F5F5F3" font-size="13">متاحة من كل صفحة</text>
+                    </svg>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-5 pt-5 mt-4 border-t border-brand-lightBeige text-[11px] text-brand-tealDark/70">
+                    <span class="flex items-center gap-2"><span class="w-3.5 h-3.5 rounded bg-brand-gold block"></span>
+                        صفحات إيراد ذات أولوية</span>
+                    <span class="flex items-center gap-2"><span class="w-3.5 h-3.5 rounded bg-brand-bgColor border border-brand-lightBeige block"></span>
+                        صفحات محتوى قياسية</span>
+                    <span class="flex items-center gap-2"><span class="w-3.5 h-3.5 rounded bg-brand-tealDark block"></span>
+                        عقد رئيسي أو طبقة تحويل</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-3 card-hover">
+                    <h4 class="text-sm flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-gold rounded-full block"></span> لماذا أربع طبقات دخول؟
+                    </h4>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">مدير مصنع يبحث باسم النظام. مالك مطعم يبحث
+                        بمشكلته. مقاول يبحث بالمدينة. مسؤول امتثال يبحث بمتطلب الدفاع المدني. الطبقة الواحدة تلتقط
+                        واحدًا منهم فقط — الأربع تلتقطهم جميعًا وتصبّهم في المسار نفسه.</p>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-3 card-hover">
+                    <h4 class="text-sm flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-gold rounded-full block"></span> لماذا صفحة لكل نظام؟
+                    </h4>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">صفحة واحدة تجمع كل الأنظمة لا تتصدّر أي
+                        بحث. صفحة مخصّصة لكل نظام تتيح استهداف مصطلح البحث الدقيق، وعرض المواصفات والمعايير المطبّقة،
+                        وربط دراسة الحالة الصحيحة بالنظام الصحيح.</p>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-3 card-hover">
+                    <h4 class="text-sm flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-gold rounded-full block"></span> لماذا صفحة لكل فرع؟
+                    </h4>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">البحث في هذا المجال محلي بطبيعته. صفحة
+                        الفرع ترتبط بملف النشاط التجاري على الخرائط، وتحمل عنوانًا وهاتفًا ونطاق تغطية ومشاريع منفّذة
+                        في المدينة نفسها — وهي أقوى إشارة محلية يمكن تقديمها.</p>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-3 card-hover">
+                    <h4 class="text-sm flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-gold rounded-full block"></span> لماذا «إطفاء المطابخ» بارز؟
+                    </h4>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">وجود ماكدونالدز ضمن العملاء يعني خبرة
+                        قائمة في أنظمة إطفاء المطابخ التجارية. هذه خدمة متكرّرة، وسريعة الدورة، وهامشها مرتفع، وسوقها
+                        في السعودية ضخم — ولا تظهر في الملف التعريفي إطلاقًا.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTENT MAP — CORE ============ -->
+        <section class="space-y-8 pt-2">
+            <div class="text-center">
+                <h2 class="text-2xl mb-2">خريطة المحتوى — نواة الإطلاق</h2>
+                <p class="text-sm text-brand-tealDark/60">اثنتا عشرة صفحة تُبنى أولًا، وهي كافية لإطلاق موقع يعمل
+                    تجاريًا قبل استكمال بقية الهيكل</p>
+            </div>
+
+            <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-4 md:p-6 shadow-sm overflow-x-auto">
+                <table class="w-full text-right text-xs md:text-sm min-w-[1000px]">
+                    <thead>
+                        <tr class="bg-brand-tealDark text-brand-white">
+                            <th class="p-3 rounded-tr-xl font-semibold">المسار</th>
+                            <th class="p-3 font-semibold">عنوان الصفحة</th>
+                            <th class="p-3 font-semibold">نية البحث المستهدفة</th>
+                            <th class="p-3 font-semibold">مكوّنات المحتوى</th>
+                            <th class="p-3 rounded-tl-xl font-semibold">الإجراء التحويلي</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-brand-tealDark/90">
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold" dir="ltr">/</td>
+                            <td class="p-3 font-semibold">أنظمة السلامة ومكافحة الحريق — حماية معتمدة لمنشأتك</td>
+                            <td class="p-3">شركة أنظمة إطفاء حريق السعودية</td>
+                            <td class="p-3">عبارة تموضع واحدة، أربعة مداخل للأنظمة والقطاعات، شريط اعتمادات، ثلاث دراسات
+                                حالة، شريط عملاء، خريطة الفروع</td>
+                            <td class="p-3">اطلب عرض سعر + واتساب</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold" dir="ltr">/about</td>
+                            <td class="p-3 font-semibold">من نحن — عشرون عامًا في حماية المنشآت</td>
+                            <td class="p-3">بحث بالاسم التجاري + تحقق من الجدية</td>
+                            <td class="p-3">التاريخ بالأرقام، كلمة المدير العام، سياسة الجودة بصياغة محرّرة، هيكل
+                                الفروع، الفريق الفني</td>
+                            <td class="p-3">تحميل الملف التعريفي</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold" dir="ltr">/certifications</td>
+                            <td class="p-3 font-semibold">الاعتمادات والتراخيص</td>
+                            <td class="p-3">تحقق من المؤهلات قبل الترسية</td>
+                            <td class="p-3">اعتماد الدفاع المدني، تصنيف المقاولين، السجل التجاري، الشهادة الضريبية،
+                                أيزو، خطابات الوكالة من الموردين</td>
+                            <td class="p-3">طلب ملف التأهيل</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold" dir="ltr">/systems/fire-alarm</td>
+                            <td class="p-3 font-semibold">أنظمة إنذار الحريق — تقليدي ومعنون ولاسلكي</td>
+                            <td class="p-3">تركيب نظام إنذار حريق / نظام إنذار معنون</td>
+                            <td class="p-3">أنواع الأنظمة ومتى يُستخدم كلٌّ منها، المعايير المطبّقة، لوحات التحكم
+                                المعتمدة، مخطط توضيحي، أسئلة شائعة</td>
+                            <td class="p-3">احجز زيارة فحص</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold" dir="ltr">/systems/sprinkler</td>
+                            <td class="p-3 font-semibold">أنظمة رشاشات مكافحة الحريق</td>
+                            <td class="p-3">تركيب رشاشات حريق / نظام أنابيب رطبة</td>
+                            <td class="p-3">الأنابيب الرطبة والجافة والفمر والضبط المسبق، معيار الاختيار حسب نوع
+                                المنشأة، صور تنفيذ حقيقية</td>
+                            <td class="p-3">احجز زيارة فحص</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold" dir="ltr">/systems/gas-suppression</td>
+                            <td class="p-3 font-semibold">الإطفاء بالغاز — FM-200 و NOVEC 1230</td>
+                            <td class="p-3">نظام اطفاء FM200 غرف السيرفرات</td>
+                            <td class="p-3">مقارنة بين الغازين، التطبيقات الحرجة، حساب حجم الغرفة، اعتبارات السلامة
+                                البشرية</td>
+                            <td class="p-3">اطلب دراسة هندسية</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold" dir="ltr">/systems/fire-pumps</td>
+                            <td class="p-3 font-semibold">مضخات الحريق وغرف المضخات</td>
+                            <td class="p-3">توريد وتركيب مضخات حريق معتمدة</td>
+                            <td class="p-3">أنواع المضخات، الشهادات المطلوبة، غرفة المضخات المتكاملة، الفحص الدوري
+                                والتشغيل التجريبي</td>
+                            <td class="p-3">اطلب عرض سعر</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-gold/[0.09]">
+                            <td class="p-3 font-semibold" dir="ltr">/services/maintenance-contracts</td>
+                            <td class="p-3 font-semibold">عقود الصيانة السنوية لأنظمة السلامة</td>
+                            <td class="p-3">عقد صيانة أنظمة حريق سنوي</td>
+                            <td class="p-3">ثلاث باقات بنطاق واضح، جدول الزيارات، ما يشمله العقد وما لا يشمله، نموذج
+                                تقرير الفحص، زمن الاستجابة الملتزم به</td>
+                            <td class="p-3 font-bold text-brand-goldDark">نموذج طلب عقد</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-gold/[0.09]">
+                            <td class="p-3 font-semibold" dir="ltr">/services/civil-defense-compliance</td>
+                            <td class="p-3 font-semibold">جاهزية منشأتك لفحص الدفاع المدني</td>
+                            <td class="p-3">شهادة سلامة الدفاع المدني متطلبات</td>
+                            <td class="p-3">المتطلبات حسب نوع المنشأة، أسباب الرفض الشائعة، مسار التصحيح، مدة التنفيذ
+                                التقديرية</td>
+                            <td class="p-3 font-bold text-brand-goldDark">فحص جاهزية مجاني</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold" dir="ltr">/branches/yanbu</td>
+                            <td class="p-3 font-semibold">أنظمة السلامة والحريق في ينبع</td>
+                            <td class="p-3">شركة أنظمة حريق ينبع الصناعية</td>
+                            <td class="p-3">العنوان والهاتف وساعات العمل، نطاق التغطية، مشاريع منفّذة في ينبع، خبرة
+                                المنشآت الصناعية</td>
+                            <td class="p-3">اتصال مباشر + واتساب</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold" dir="ltr">/quote</td>
+                            <td class="p-3 font-semibold">اطلب عرض سعر</td>
+                            <td class="p-3">وجهة داخلية — نهاية كل مسار</td>
+                            <td class="p-3">نموذج قصير: نوع المنشأة، المساحة، النظام المطلوب، المدينة، رفع مخططات،
+                                توقّع زمن الرد</td>
+                            <td class="p-3">إرسال الطلب</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold" dir="ltr">/contact</td>
+                            <td class="p-3 font-semibold">تواصل معنا</td>
+                            <td class="p-3">بحث عن رقم أو عنوان</td>
+                            <td class="p-3">أرقام الأقسام كما وردت في الملف التعريفي، عناوين الفروع الخمسة، خريطة،
+                                بريد رسمي موحّد</td>
+                            <td class="p-3">اتصال مباشر</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-brand-teal border border-brand-lightBeige rounded-2xl p-6 shadow-sm">
+                <p class="text-xs text-brand-tealDark/80 leading-loose">
+                    <i class="fas fa-circle-exclamation text-brand-gold ml-1"></i>
+                    <strong>شرط لصفحة الاعتمادات:</strong> هذه الصفحة لا تُبنى قبل أن تؤكّد المؤسسة ما لديها فعليًا من
+                    اعتماد الدفاع المدني وتصنيف المقاولين والتسجيل في «اعتماد». إن كانت قائمة، فهي أقوى صفحة في الموقع
+                    كله. وإن كان بعضها ناقصًا، فاستخراجه يسبق بناء الصفحة ويتحوّل إلى بند تنفيذي بتاريخ محدّد.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ CONTENT MAP — EXPANSION ============ -->
+        <section class="space-y-8 pt-2">
+            <div class="text-center">
+                <h2 class="text-2xl mb-2">خريطة المحتوى — طبقة التوسّع</h2>
+                <p class="text-sm text-brand-tealDark/60">تُبنى بعد الإطلاق، وهي التي تضاعف مساحة الالتقاط من محركات
+                    البحث</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-4 card-hover">
+                    <div class="flex justify-between items-center border-b border-brand-lightBeige pb-3">
+                        <h3 class="text-base font-bold text-brand-tealDark flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brand-gold rounded-full block"></span> صفحات القطاعات
+                        </h3>
+                        <span class="bg-brand-gold/10 text-brand-goldDark text-xs px-3 py-1 rounded-full font-semibold">٧ صفحات</span>
+                    </div>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">كل صفحة تعيد ترتيب الأنظمة نفسها من زاوية
+                        القطاع: ما الذي يلزم مصنعًا بتروكيماويًا تحديدًا، وما الذي يلزم فندقًا، وما الذي تفرضه اللوائح
+                        على مدرسة.</p>
+                    <ul class="text-xs text-brand-tealDark/85 space-y-2 leading-relaxed custom-bullets">
+                        <li>المتطلبات النظامية الخاصة بالقطاع</li>
+                        <li>حزمة الأنظمة الموصى بها</li>
+                        <li>دراسة حالة من القطاع نفسه</li>
+                        <li>عميل مرجعي معروف من القائمة الحالية</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-4 card-hover">
+                    <div class="flex justify-between items-center border-b border-brand-lightBeige pb-3">
+                        <h3 class="text-base font-bold text-brand-tealDark flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brand-gold rounded-full block"></span> دراسات الحالة
+                        </h3>
+                        <span class="bg-brand-gold/10 text-brand-goldDark text-xs px-3 py-1 rounded-full font-semibold">٦–١٠</span>
+                    </div>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">هذا هو أكبر فراغ في المواد الحالية. شعار
+                        العميل وحده لا يقنع أحدًا؛ نطاق المشروع بالأرقام يقنع.</p>
+                    <ul class="text-xs text-brand-tealDark/85 space-y-2 leading-relaxed custom-bullets">
+                        <li>الجهة ونوع المنشأة ومساحتها</li>
+                        <li>النظام المنفّذ والمعايير المطبّقة</li>
+                        <li>مدة التنفيذ وأي تحدٍّ ميداني</li>
+                        <li>صور فعلية قبل وبعد التسليم</li>
+                        <li>هل تحوّل المشروع إلى عقد صيانة</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-4 card-hover">
+                    <div class="flex justify-between items-center border-b border-brand-lightBeige pb-3">
+                        <h3 class="text-base font-bold text-brand-tealDark flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brand-gold rounded-full block"></span> المركز المعرفي
+                        </h3>
+                        <span class="bg-brand-gold/10 text-brand-goldDark text-xs px-3 py-1 rounded-full font-semibold">مُولِّد عملاء</span>
+                    </div>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">مركزه دليل جاهزية الدفاع المدني كمحتوى
+                        قابل للتحميل مقابل بيانات التواصل — يُلتقط العميل في اللحظة التي يقلق فيها من الفحص.</p>
+                    <ul class="text-xs text-brand-tealDark/85 space-y-2 leading-relaxed custom-bullets">
+                        <li>قائمة تحقّق قابلة للطباعة حسب نوع المنشأة</li>
+                        <li>دوريات الفحص المطلوبة لكل نظام</li>
+                        <li>الفرق بين الأنظمة بلغة غير هندسية</li>
+                        <li>أسئلة شائعة مبنية على استفسارات حقيقية</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PLATFORM: WORDPRESS ============ -->
+        <section class="space-y-8 pt-2">
+            <div class="text-center">
+                <h2 class="text-2xl mb-2">المنصة التقنية — ووردبريس</h2>
+                <p class="text-sm text-brand-tealDark/60">قالب مخصّص يُبنى للمؤسسة، لا قالب جاهز مشترى — والفرق جوهري
+                    في الأداء والملكية</p>
+            </div>
+
+            <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-7 md:p-9 shadow-sm space-y-5">
+                <div class="flex items-center gap-4 border-b border-brand-lightBeige pb-5">
+                    <div class="bg-brand-gold/10 p-3.5 rounded-xl border border-brand-gold/20 text-brand-goldDark">
+                        <i class="fab fa-wordpress text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl text-brand-tealDark">لماذا ووردبريس تحديدًا لهذا المشروع</h3>
+                </div>
+                <ul class="text-xs md:text-sm text-brand-tealDark/90 space-y-3 leading-relaxed custom-bullets">
+                    <li><strong>الملكية الكاملة:</strong> الموقع الحالي مبني على أداة إنشاء مغلقة — بانتهاء الاشتراك
+                        ينتهي الموقع، ولا يمكن نقله. ووردبريس ملف وقاعدة بيانات يملكهما العميل ويمكن نقلهما إلى أي
+                        استضافة في أي وقت.</li>
+                    <li><strong>تحرير داخلي دون مبرمج:</strong> إضافة مشروع جديد أو تعديل رقم هاتف فرع أو نشر مقال —
+                        كلها عمليات يقوم بها موظف داخل المؤسسة بعد تدريب ساعة واحدة.</li>
+                    <li><strong>جاهزية الأرشفة:</strong> ووردبريس يُخرج صفحات كاملة من الخادم، وهو ما يفتقده الموقع
+                        الحالي تمامًا، وهو السبب المباشر في عدم فهرسته.</li>
+                    <li><strong>دعم العربية والاتجاه من اليمين لليسار:</strong> بيئة ناضجة ومجرَّبة في السوق السعودي،
+                        مع حلول ثنائية اللغة مستقرة.</li>
+                    <li><strong>سهولة التسليم لاحقًا:</strong> إن قرّرت المؤسسة تغيير مزوّد الخدمة مستقبلًا، فالسوق
+                        مليء بمن يستطيع استلام موقع ووردبريس — وهذا يحمي المؤسسة من الارتهان لجهة واحدة.</li>
+                </ul>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-3 card-hover">
+                    <h4 class="text-sm flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-alert rounded-full block"></span> قالب مخصّص وخفيف
+                    </h4>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">قالب يُكتب خصيصًا لهيكل الموقع المعتمد،
+                        بلا منشئ صفحات ثقيل ولا إضافات فائضة. القوالب الجاهزة تحمل مئات الوظائف غير المستخدمة، وهي
+                        السبب الأول في بطء مواقع ووردبريس.</p>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-3 card-hover">
+                    <h4 class="text-sm flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-gold rounded-full block"></span> محتوى مُنظَّم لا نصوص حرّة
+                    </h4>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">أنواع محتوى مستقلة للأنظمة والقطاعات
+                        والفروع ودراسات الحالة، بحقول محدّدة لكل نوع. هذا يضمن أن أي صفحة تُضاف مستقبلًا تخرج بالبنية
+                        الصحيحة تلقائيًا.</p>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-3 card-hover">
+                    <h4 class="text-sm flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-gold rounded-full block"></span> ثنائية اللغة بمسارين منفصلين
+                    </h4>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">العربية هي الأصل، والإنجليزية نسخة مرآة
+                        بمسار مستقل ووسم لغة بديلة — لا ترجمة آلية داخل الصفحة نفسها.</p>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-3 card-hover">
+                    <h4 class="text-sm flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-gold rounded-full block"></span> البيانات المنظّمة والأرشفة
+                    </h4>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">عنوان ووصف يدويان لكل صفحة، ووسم نشاط
+                        محلي لكل فرع من الفروع الخمسة، ووسم خدمة لكل نظام، ووسم أسئلة شائعة، وخريطة موقع تلقائية.</p>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-3 card-hover">
+                    <h4 class="text-sm flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-gold rounded-full block"></span> النماذج ومسار الاستفسار
+                    </h4>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">نماذج تقبل رفع المخططات، وترسل إلى البريد
+                        المؤسسي وإلى واتساب في آن واحد، مع حفظ نسخة داخل الموقع حتى لا يضيع استفسار بسبب خطأ بريدي.</p>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 shadow-sm space-y-3 card-hover">
+                    <h4 class="text-sm flex items-center gap-2.5 text-brand-tealDark">
+                        <span class="w-1.5 h-5 bg-brand-gold rounded-full block"></span> الأداء والقياس
+                    </h4>
+                    <p class="text-xs text-brand-tealDark/70 leading-relaxed">تخزين مؤقت على مستوى الصفحة، وصور بصيغ
+                        حديثة، وخطوط محمّلة محليًا، وزر واتساب ثابت. وربط أدوات التحليل قبل الإطلاق مع تتبّع كل نقرة
+                        اتصال بوصفها هدفًا مُقاسًا.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ HOSTING REQUIREMENTS ============ -->
+        <section class="space-y-8 pt-2">
+            <div class="text-center">
+                <h2 class="text-2xl mb-2">متطلبات الاستضافة</h2>
+                <p class="text-sm text-brand-tealDark/60">المواصفات التي يجب توفّرها في الخادم قبل بدء التركيب —
+                    تُفحص في المرحلة صفر</p>
+            </div>
+
+            <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-4 md:p-6 shadow-sm overflow-x-auto">
+                <table class="w-full text-right text-xs md:text-sm min-w-[820px]">
+                    <thead>
+                        <tr class="bg-brand-tealDark text-brand-white">
+                            <th class="p-3 rounded-tr-xl font-semibold">البند</th>
+                            <th class="p-3 font-semibold">الحدّ الأدنى المقبول</th>
+                            <th class="p-3 font-semibold">الموصى به</th>
+                            <th class="p-3 rounded-tl-xl font-semibold">لماذا</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-brand-tealDark/90">
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">نوع الاستضافة</td>
+                            <td class="p-3">استضافة مشتركة بجودة عالية</td>
+                            <td class="p-3 font-semibold text-brand-goldDark">استضافة ووردبريس مُدارة أو خادم افتراضي خاص</td>
+                            <td class="p-3">الاستضافة المشتركة الرخيصة تتأثر بمواقع الجيران على الخادم نفسه</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">إصدار <span dir="ltr">PHP</span></td>
+                            <td class="p-3" dir="ltr">8.1</td>
+                            <td class="p-3 font-semibold text-brand-goldDark" dir="ltr">8.2 / 8.3</td>
+                            <td class="p-3">الإصدارات الأقدم غير مدعومة أمنيًا وأبطأ بفارق ملموس</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">قاعدة البيانات</td>
+                            <td class="p-3" dir="ltr">MySQL 5.7 / MariaDB 10.4</td>
+                            <td class="p-3 font-semibold text-brand-goldDark" dir="ltr">MySQL 8.0+ / MariaDB 10.6+</td>
+                            <td class="p-3">دعم أفضل للترميز العربي وأداء أعلى في الاستعلامات</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">ذاكرة <span dir="ltr">PHP</span></td>
+                            <td class="p-3" dir="ltr">256 MB</td>
+                            <td class="p-3 font-semibold text-brand-goldDark" dir="ltr">512 MB</td>
+                            <td class="p-3">معالجة الصور ورفع المخططات عبر النماذج تستهلك ذاكرة</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">حجم الرفع الأقصى</td>
+                            <td class="p-3" dir="ltr">32 MB</td>
+                            <td class="p-3 font-semibold text-brand-goldDark" dir="ltr">64 MB</td>
+                            <td class="p-3">العملاء سيرفعون مخططات ومستندات مع طلب عرض السعر</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">مساحة التخزين</td>
+                            <td class="p-3" dir="ltr">20 GB</td>
+                            <td class="p-3 font-semibold text-brand-goldDark" dir="ltr">50 GB SSD/NVMe</td>
+                            <td class="p-3">أرشيف صور المشاريع سينمو مع كل دراسة حالة جديدة</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">شهادة التشفير</td>
+                            <td class="p-3">شهادة مجانية مع تجديد تلقائي</td>
+                            <td class="p-3 font-semibold text-brand-goldDark">شهادة تغطي النطاق والنطاقات الفرعية</td>
+                            <td class="p-3">شرط أساسي للثقة وللأرشفة، وللنماذج التي تجمع بيانات</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">النسخ الاحتياطي</td>
+                            <td class="p-3">نسخة يومية بحفظ ٧ أيام</td>
+                            <td class="p-3 font-semibold text-brand-goldDark">نسخة يومية بحفظ ٣٠ يومًا + نسخة خارجية</td>
+                            <td class="p-3">النسخة المخزّنة على الخادم نفسه لا تحمي من فشل الخادم</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">بيئة تجريبية</td>
+                            <td class="p-3">غير متوفّرة — يُكتفى ببيئة محلية</td>
+                            <td class="p-3 font-semibold text-brand-goldDark">بيئة تجريبية بنسخة واحدة</td>
+                            <td class="p-3">اختبار التحديثات قبل تطبيقها على الموقع الحيّ</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">موقع مركز البيانات</td>
+                            <td class="p-3">أوروبا</td>
+                            <td class="p-3 font-semibold text-brand-goldDark">داخل المملكة أو منطقة الخليج</td>
+                            <td class="p-3">زمن استجابة أقل للزائر السعودي، واعتبارات حفظ البيانات محليًا</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">الحماية</td>
+                            <td class="p-3">جدار حماية أساسي</td>
+                            <td class="p-3 font-semibold text-brand-goldDark">جدار حماية تطبيقات + حماية من الإغراق</td>
+                            <td class="p-3">مواقع ووردبريس هدف دائم لمحاولات الاختراق الآلية</td>
+                        </tr>
+                        <tr class="bg-brand-gold/[0.09]">
+                            <td class="p-3 font-semibold">البريد المؤسسي</td>
+                            <td class="p-3">بريد الاستضافة المشتركة</td>
+                            <td class="p-3 font-semibold text-brand-goldDark">خدمة بريد مستقلة عن الاستضافة</td>
+                            <td class="p-3">فصل البريد عن الموقع يمنع توقّف المراسلات عند أي عطل في الاستضافة</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-[11px] text-brand-tealDark/55 leading-relaxed pt-4">
+                    إن كانت الاستضافة الحالية تفي بعمود «الحدّ الأدنى»، فلا حاجة لتغييرها ونبني عليها مباشرة. وإن لم
+                    تكن، نرشّح خيارين للمؤسسة مع فارق التكلفة السنوية، ويبقى قرار الاختيار والتعاقد للمؤسسة.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ HOSTING DISCOVERY ============ -->
+        <section class="space-y-8 pt-2">
+            <div class="text-center">
+                <h2 class="text-2xl mb-2">ما نحتاج معرفته عن البنية الحالية</h2>
+                <p class="text-sm text-brand-tealDark/60">قائمة استكشاف تُملأ من المؤسسة — بدونها لا يمكن تقدير المرحلة
+                    صفر بدقة</p>
+            </div>
+
+            <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-4 md:p-6 shadow-sm overflow-x-auto">
+                <table class="w-full text-right text-xs md:text-sm min-w-[860px]">
+                    <thead>
+                        <tr class="bg-brand-tealDark text-brand-white">
+                            <th class="p-3 rounded-tr-xl font-semibold">البند</th>
+                            <th class="p-3 font-semibold">السؤال</th>
+                            <th class="p-3 rounded-tl-xl font-semibold">أثر عدم توفّره</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-brand-tealDark/90">
+                        <tr class="border-b border-brand-lightBeige bg-brand-alert/[0.06]">
+                            <td class="p-3 font-semibold">حساب مُسجّل النطاق</td>
+                            <td class="p-3">لدى أي جهة سُجّل النطاق الحالي؟ وباسم مَن؟ ومتى ينتهي؟ ومن يملك بيانات
+                                الدخول؟</td>
+                            <td class="p-3 text-brand-alert">تعذّر توجيه النطاق يوقف الإطلاق بالكامل</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">إدارة سجلات النطاق</td>
+                            <td class="p-3">أين تُدار سجلات النطاق حاليًا؟ وهل يمكن الوصول إليها لإضافة سجلات جديدة؟</td>
+                            <td class="p-3">تعذّر ربط البريد أو الاستضافة الجديدة</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">الاستضافة الحالية</td>
+                            <td class="p-3">ما اسم مزوّد الاستضافة الحالي ونوع الباقة وتاريخ تجديدها؟ وهل الاشتراك في
+                                أداة الإنشاء منفصل عن الاستضافة؟</td>
+                            <td class="p-3">تعذّر تقدير الحاجة إلى ترقية أو نقل</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">وجود ووردبريس قائم</td>
+                            <td class="p-3">هل توجد نسخة ووردبريس منصّبة على أي نطاق تابع للمؤسسة، ولو غير مستخدمة؟</td>
+                            <td class="p-3">قد نبني على قائم بدل البدء من الصفر</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-alert/[0.06]">
+                            <td class="p-3 font-semibold">البريد الإلكتروني</td>
+                            <td class="p-3">أين يُستضاف البريد المستخدم اليوم؟ وكم عدد الصناديق المطلوبة على النطاق
+                                الجديد؟</td>
+                            <td class="p-3 text-brand-alert">نقل النطاق دون خطة بريد يقطع المراسلات فورًا</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">محتوى الموقع الحالي</td>
+                            <td class="p-3">هل من محتوى أو صور على الموقع الحالي يجب الاحتفاظ به؟ وهل توجد نسخة منها
+                                خارج الأداة؟</td>
+                            <td class="p-3">فقدان محتوى غير قابل للاستخراج بعد إيقاف الاشتراك</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">الحسابات التحليلية</td>
+                            <td class="p-3">هل توجد حسابات تحليلات أو مشرفي مواقع مرتبطة بالنطاق؟ ومن يملكها؟</td>
+                            <td class="p-3">فقدان بيانات تاريخية وإعادة بناء القياس من الصفر</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">ملفات النشاط التجاري</td>
+                            <td class="p-3">هل أُنشئ سابقًا أي ملف نشاط على الخرائط لأي فرع؟ وتحت أي بريد؟</td>
+                            <td class="p-3">ملفات مكرّرة أو غير قابلة للاسترجاع لاحقًا</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">حسابات التواصل</td>
+                            <td class="p-3">ما الحسابات الرسمية القائمة؟ ومن يديرها؟ وهل ترتبط بالنطاق الجديد؟</td>
+                            <td class="p-3">تشتّت الهوية بين النطاق الجديد والحسابات القديمة</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold">الجهة التي بنت الموقع الحالي</td>
+                            <td class="p-3">هل هناك جهة خارجية تملك حاليًا صلاحيات على النطاق أو الاستضافة؟</td>
+                            <td class="p-3">ارتهان الوصول لطرف ثالث قد يتأخر أو يمتنع</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-brand-white border-2 border-brand-alert/30 rounded-2xl p-7 md:p-8 shadow-sm space-y-4">
+                <div class="flex items-center gap-4 border-b border-brand-lightBeige pb-5">
+                    <div class="bg-brand-alert/10 p-3.5 rounded-xl border border-brand-alert/20 text-brand-alert">
+                        <i class="fas fa-key text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl text-brand-tealDark">مبدأ الملكية والصلاحيات</h3>
+                </div>
+                <div class="text-sm text-brand-tealDark/90 leading-loose space-y-3">
+                    <p>
+                        كل الحسابات التي تُنشأ في هذا المشروع — النطاق، والاستضافة، والبريد، وأدوات القياس، وملفات
+                        النشاط التجاري — <strong>تُسجَّل باسم مؤسسة الحل الذكي وببريدها المؤسسي</strong>، ثم تُمنح
+                        الجهة المنفّذة صلاحية وصول مفوَّضة.
+                    </p>
+                    <p class="font-semibold text-brand-alert">
+                        لا يُسجَّل أي حساب باسم الجهة المنفّذة أو ببريد شخصي. هذا البند يحمي المؤسسة من تكرار ما حدث مع
+                        النطاق الحالي، ويضمن أن تغيير مزوّد الخدمة مستقبلًا لا يعني فقدان أي أصل رقمي.
+                    </p>
+                    <p>
+                        عند إغلاق المشروع تُسلَّم المؤسسة حزمة تتضمّن: بيانات الدخول كاملة، ونسخة من الموقع وقاعدة
+                        البيانات، وشيفرة القالب المخصّص، ودليل تشغيل مختصر باللغة العربية.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PHASES ============ -->
+        <section class="space-y-8 pt-2">
+            <div class="text-center">
+                <h2 class="text-2xl mb-2">خطة التنفيذ المرحلية</h2>
+                <p class="text-sm text-brand-tealDark/60">تبدأ بتثبيت الهوية قبل أي عمل تصميمي</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="md:col-span-2 bg-brand-white border-2 border-brand-alert/30 rounded-2xl p-6 md:p-7 shadow-sm space-y-4">
+                    <div class="flex justify-between items-center border-b border-brand-lightBeige pb-3">
+                        <h3 class="text-base font-bold text-brand-tealDark flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brand-alert rounded-full block"></span> المرحلة صفر — تثبيت الهوية
+                            الرقمية
+                        </h3>
+                        <span class="bg-brand-alert/10 text-brand-alert text-xs px-3 py-1 rounded-full font-semibold whitespace-nowrap">أسبوعان
+                            — شرط للبدء</span>
+                    </div>
+                    <ul class="text-xs text-brand-tealDark/90 space-y-2.5 leading-relaxed custom-bullets">
+                        <li>حجز النطاق الصحيح بامتداد <span dir="ltr">.com</span> ويفضَّل <span dir="ltr">.com.sa</span>
+                            بموجب السجل التجاري، وتحويل النطاق الحالي إليه.</li>
+                        <li>إنشاء بريد مؤسسي موحّد على النطاق الجديد مع ضبط سجلات الحماية لمنع وصول المراسلات إلى
+                            البريد المزعج.</li>
+                        <li>حصر وتوثيق الاعتمادات الفعلية: الدفاع المدني، تصنيف المقاولين، اعتماد، أيزو — وتحديد ما
+                            يلزم استخراجه.</li>
+                        <li>استكمال قائمة الاستكشاف الخاصة بالبنية الحالية، وفحص الاستضافة القائمة مقابل جدول المتطلبات
+                            — ثم إما اعتمادها أو ترشيح بديل.</li>
+                        <li>تجميع صلاحيات الوصول: مُسجّل النطاق، وإدارة السجلات، ولوحة الاستضافة — وتحويل ملكيتها إلى
+                            حسابات المؤسسة.</li>
+                        <li>تركيب ووردبريس على بيئة تجريبية وتثبيت الإعدادات الأساسية قبل بدء التصميم.</li>
+                        <li>إنشاء وتوثيق ملف نشاط تجاري لكل فرع من الفروع الخمسة على الخرائط.</li>
+                        <li>إيقاف توزيع الملف التعريفي الحالي مؤقتًا لحين تصحيح بيانات التواصل فيه.</li>
+                        <li><strong>مخرَج المرحلة:</strong> هوية رقمية واحدة صحيحة، وبيئة ووردبريس جاهزة على استضافة
+                            معتمدة، وقائمة اعتمادات مؤكّدة تُبنى عليها صفحة التأهيل.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 md:p-7 shadow-sm space-y-4 card-hover">
+                    <div class="flex justify-between items-center border-b border-brand-lightBeige pb-3">
+                        <h3 class="text-base font-bold text-brand-tealDark flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brand-gold rounded-full block"></span> المرحلة الأولى — بناء النواة
+                        </h3>
+                        <span class="bg-brand-gold/10 text-brand-goldDark text-xs px-3 py-1 rounded-full font-semibold whitespace-nowrap">٤–٦ أسابيع</span>
+                    </div>
+                    <ul class="text-xs text-brand-tealDark/90 space-y-2.5 leading-relaxed custom-bullets">
+                        <li>تصميم وبناء الاثنتي عشرة صفحة الواردة في خريطة نواة الإطلاق.</li>
+                        <li>كتابة المحتوى العربي كاملًا — لا نقل حرفي من الملف التعريفي.</li>
+                        <li>تصوير ميداني لثلاثة مواقع على الأقل لتغذية دراسات الحالة.</li>
+                        <li>ربط النماذج بواتساب والبريد المؤسسي، وتفعيل القياس.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 md:p-7 shadow-sm space-y-4 card-hover">
+                    <div class="flex justify-between items-center border-b border-brand-lightBeige pb-3">
+                        <h3 class="text-base font-bold text-brand-tealDark flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brand-gold rounded-full block"></span> المرحلة الثانية — التوسّع
+                        </h3>
+                        <span class="bg-brand-gold/10 text-brand-goldDark text-xs px-3 py-1 rounded-full font-semibold whitespace-nowrap">٤–٦ أسابيع</span>
+                    </div>
+                    <ul class="text-xs text-brand-tealDark/90 space-y-2.5 leading-relaxed custom-bullets">
+                        <li>استكمال صفحات الأنظمة المتبقية وصفحات القطاعات السبع.</li>
+                        <li>صفحات الفروع الأربعة المتبقية مربوطة بملفاتها على الخرائط.</li>
+                        <li>ستّ دراسات حالة كاملة بالصور والأرقام.</li>
+                        <li>إعادة تحرير الملف التعريفي المطبوع ليطابق التموضع الجديد.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 md:p-7 shadow-sm space-y-4 card-hover">
+                    <div class="flex justify-between items-center border-b border-brand-lightBeige pb-3">
+                        <h3 class="text-base font-bold text-brand-tealDark flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brand-gold rounded-full block"></span> المرحلة الثالثة — توليد الطلب
+                        </h3>
+                        <span class="bg-brand-gold/10 text-brand-goldDark text-xs px-3 py-1 rounded-full font-semibold whitespace-nowrap">مستمرة</span>
+                    </div>
+                    <ul class="text-xs text-brand-tealDark/90 space-y-2.5 leading-relaxed custom-bullets">
+                        <li>إطلاق دليل جاهزية الدفاع المدني كمحتوى جاذب للعملاء.</li>
+                        <li>حملات إعلانية بنطاق جغرافي ضيّق وكلمات عالية النية.</li>
+                        <li>برنامج منظّم لجمع تقييمات العملاء الحاليين.</li>
+                        <li>متابعة منصة «اعتماد» بمعايير واضحة لقبول أو رفض المناقصة.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-6 md:p-7 shadow-sm space-y-4 card-hover">
+                    <div class="flex justify-between items-center border-b border-brand-lightBeige pb-3">
+                        <h3 class="text-base font-bold text-brand-tealDark flex items-center gap-2">
+                            <span class="w-2 h-6 bg-brand-gold rounded-full block"></span> المرحلة الرابعة — التشغيل
+                        </h3>
+                        <span class="bg-brand-gold/10 text-brand-goldDark text-xs px-3 py-1 rounded-full font-semibold whitespace-nowrap">٣–٩ أشهر</span>
+                    </div>
+                    <ul class="text-xs text-brand-tealDark/90 space-y-2.5 leading-relaxed custom-bullets">
+                        <li>سجل القاعدة المركّبة: كل موقع وكل جهاز وتاريخ تركيبه وموعد فحصه القادم.</li>
+                        <li>تنبيهات تجديد آلية قبل موعد الفحص أو إعادة التعبئة بستين ثم ثلاثين يومًا.</li>
+                        <li>تطبيق ميداني للفنيين: قوائم فحص عربية، وصور إثبات، وتقرير موقّع رقميًا.</li>
+                        <li>قائمة أسعار موحّدة لكل نوع جهاز ولكل زيارة لتسريع إصدار العروض.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-4 md:p-6 shadow-sm overflow-x-auto">
+                <h3 class="text-lg mb-4 flex items-center gap-2 text-brand-tealDark"><i class="fas fa-timeline text-brand-gold text-sm"></i>
+                    الجدول الزمني التقديري</h3>
+                <table class="w-full text-right text-xs md:text-sm min-w-[560px]">
+                    <thead>
+                        <tr class="bg-brand-tealDark text-brand-white">
+                            <th class="p-3 rounded-tr-xl font-semibold">المرحلة</th>
+                            <th class="p-3 font-semibold">المحور</th>
+                            <th class="p-3 rounded-tl-xl font-semibold">المدة</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-brand-tealDark/90">
+                        <tr class="border-b border-brand-lightBeige bg-brand-alert/[0.06]">
+                            <td class="p-3 font-bold text-brand-alert">صفر</td>
+                            <td class="p-3 font-semibold">تثبيت الهوية الرقمية — شرط للبدء</td>
+                            <td class="p-3 whitespace-nowrap">أسبوعان</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-bold">١</td>
+                            <td class="p-3">بناء نواة الموقع وإطلاقها</td>
+                            <td class="p-3 whitespace-nowrap">٤–٦ أسابيع</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-bold">٢</td>
+                            <td class="p-3">توسعة المحتوى ودراسات الحالة</td>
+                            <td class="p-3 whitespace-nowrap">٤–٦ أسابيع</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-bold">٣</td>
+                            <td class="p-3">توليد الطلب والحملات</td>
+                            <td class="p-3 whitespace-nowrap">مستمرة بعد الإطلاق</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-bold">٤</td>
+                            <td class="p-3">البنية التشغيلية وسجل القاعدة المركّبة</td>
+                            <td class="p-3 whitespace-nowrap">٣–٩ أشهر</td>
+                        </tr>
+                        <tr class="bg-brand-gold/[0.09]">
+                            <td class="p-3 font-bold text-brand-goldDark">حتى الإطلاق</td>
+                            <td class="p-3 font-bold">من التوقيع إلى موقع يعمل تجاريًا</td>
+                            <td class="p-3 font-bold text-brand-goldDark whitespace-nowrap">٦–٨ أسابيع</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-[11px] text-brand-tealDark/55 leading-relaxed pt-4">
+                    الجدول تقدير مبدئي مبني على توفّر مواد المؤسسة في وقتها — خاصة صور المشاريع وملفات الاعتمادات. تأخّر
+                    هذه المواد هو السبب الأول لتمدّد الجدول في مشاريع مماثلة. تصدر الكلفة التفصيلية لكل مرحلة في ملحق
+                    منفصل بعد اعتماد النطاق.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ KPIs ============ -->
+        <section class="space-y-8 pt-2">
+            <div class="text-center">
+                <h2 class="text-2xl mb-2">مؤشرات القياس</h2>
+                <p class="text-sm text-brand-tealDark/60">ما سيُقاس بعد الإطلاق — الزيارات وحدها ليست مؤشرًا</p>
+            </div>
+
+            <div class="bg-brand-white border border-brand-lightBeige rounded-2xl p-4 md:p-6 shadow-sm overflow-x-auto">
+                <table class="w-full text-right text-xs md:text-sm min-w-[680px]">
+                    <thead>
+                        <tr class="bg-brand-tealDark text-brand-white">
+                            <th class="p-3 rounded-tr-xl font-semibold">المؤشر</th>
+                            <th class="p-3 font-semibold">خط الأساس اليوم</th>
+                            <th class="p-3 rounded-tl-xl font-semibold">الهدف بعد ستة أشهر</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-brand-tealDark/90">
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">عدد الصفحات المفهرسة</td>
+                            <td class="p-3">قريب من الصفر</td>
+                            <td class="p-3">٤٠ صفحة فأكثر</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">استفسارات عبر النماذج وواتساب شهريًا</td>
+                            <td class="p-3">غير مُقاس</td>
+                            <td class="p-3">مُقاس ومصنّف حسب المصدر والنظام</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige">
+                            <td class="p-3 font-semibold">ظهور الفروع على الخرائط</td>
+                            <td class="p-3">لا توجد ملفات موثّقة</td>
+                            <td class="p-3">خمسة ملفات موثّقة بتقييمات فعلية</td>
+                        </tr>
+                        <tr class="border-b border-brand-lightBeige bg-brand-bgColor/60">
+                            <td class="p-3 font-semibold">طلبات عقود الصيانة</td>
+                            <td class="p-3">لا يوجد مسار مخصّص</td>
+                            <td class="p-3">مسار مستقل ومتابَع شهريًا</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold">نسبة الإيراد المتكرّر من إجمالي الإيراد</td>
+                            <td class="p-3">تحتاج تأكيدًا من المؤسسة</td>
+                            <td class="p-3">اتجاه تصاعدي مُوثَّق ربعيًا</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ============ NEXT STEPS ============ -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start pt-2">
+            <div class="md:col-span-7 bg-brand-white border border-brand-lightBeige rounded-2xl p-8 shadow-sm space-y-5 card-hover">
+                <h3 class="text-lg text-brand-tealDark flex items-center gap-3"><i class="fas fa-list-check text-brand-gold text-sm"></i>
+                    المطلوب من المؤسسة — قبل بدء التنفيذ</h3>
+                <ul class="text-xs text-brand-tealDark/90 space-y-3 leading-relaxed custom-bullets">
+                    <li>تأكيد حالة اعتماد الدفاع المدني وتصنيف المقاولين والتسجيل في «اعتماد» — هذا البند وحده يحدّد
+                        شكل صفحة الاعتمادات وأي المناقصات يمكن دخولها.</li>
+                    <li>تقدير تقريبي لتوزيع الإيراد الحالي بين مشاريع التوريد والتركيب وبين عقود الصيانة — يضبط ترتيب
+                        أولويات المراحل.</li>
+                    <li>ترشيح ستة إلى عشرة مشاريع منفّذة صالحة للنشر، مع الإذن باستخدام اسم الجهة أو نشرها بوصف عام.</li>
+                    <li>إتاحة أرشيف الصور الميدانية، أو الموافقة على جلسة تصوير في ثلاثة مواقع.</li>
+                    <li>تعبئة قائمة الاستكشاف الخاصة بالبنية الحالية — النطاق، والاستضافة، والبريد، والحسابات
+                        التحليلية — وتسليم بيانات الدخول المتاحة.</li>
+                    <li>تحديد عدد صناديق البريد المطلوبة على النطاق الجديد وأسماء مستخدميها.</li>
+                    <li>اعتماد ميزانية الاستضافة والنطاق السنوية، علمًا بأن التعاقد يتم باسم المؤسسة مباشرة.</li>
+                    <li>تحديد مسؤول واحد من المؤسسة للتواصل واعتماد المخرجات، وتحديد قناة استقبال الاستفسارات الواردة.</li>
+                    <li>اعتماد هيكل الموقع وخريطة المحتوى الواردَين أعلاه، أو تعديلهما قبل بدء التصميم.</li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-5 bg-brand-teal border border-brand-lightBeige rounded-2xl p-8 shadow-sm space-y-4 relative overflow-hidden">
+                <div class="absolute -top-10 -left-10 text-brand-gold/10 text-9xl">
+                    <i class="fas fa-triangle-exclamation"></i>
+                </div>
+                <div class="relative z-10 space-y-4">
+                    <div class="w-12 h-12 bg-brand-white text-brand-gold rounded-full flex items-center justify-center text-xl border border-brand-lightBeige">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg text-brand-tealDark font-bold">أبرز المخاطر</h3>
+                    <ul class="text-xs text-brand-tealDark/85 space-y-3 leading-loose custom-bullets">
+                        <li>تأجيل تثبيت النطاق يعني بناء موقع جديد على هوية ما تزال مشتّتة — وإعادة العمل لاحقًا أكلف
+                            من ضبطه الآن.</li>
+                        <li>تعذّر الوصول إلى حساب مُسجّل النطاق أو إدارة سجلاته يوقف الإطلاق مهما اكتمل البناء — وهو
+                            البند الأول الذي يجب حسمه.</li>
+                        <li>نقل النطاق قبل تجهيز البريد المؤسسي يقطع المراسلات الواردة فورًا، ويجب أن يتمّا معًا.</li>
+                        <li>نقص الاعتمادات المفتاحية يسقط المؤسسة من فئة كاملة من المناقصات مهما بلغت جودة الموقع.</li>
+                        <li>غياب صور المشاريع الحقيقية يحوّل دراسات الحالة إلى نص بلا إثبات، ويلغي أهم ميزة تنافسية.</li>
+                        <li>الإنفاق الإعلاني قبل جاهزية الموقع للتحويل يهدر الميزانية على زيارات لا تتحوّل إلى استفسارات.</li>
+                        <li>عدم بناء سجل القاعدة المركّبة يبقي الإيراد معتمدًا على المناقصات المتقلّبة بدل الصيانة
+                            المتكرّرة.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="bg-brand-white text-brand-tealDark border border-brand-lightBeige rounded-2xl p-6 md:p-8 shadow-sm space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-right text-xs border-b border-brand-lightBeige pb-6">
+                <div class="space-y-2">
+                    <h5 class="text-sm font-bold text-brand-tealDark mb-3 flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-brand-gold"></i> الجهة المستفيدة
+                    </h5>
+                    <p class="text-brand-tealDark/80">مؤسسة الحل الذكي لأدوات ومعدات السلامة</p>
+                    <p class="text-brand-tealDark/60 font-medium">ينبع · جدة · الرياض · الدمام · الطائف</p>
+                </div>
+
+                <div class="space-y-2">
+                    <h5 class="text-sm font-bold text-brand-tealDark mb-3 flex items-center gap-2">
+                        <i class="fas fa-phone-alt text-brand-gold"></i> قنوات الاتصال
+                    </h5>
+                    <p class="text-brand-tealDark/80 flex items-center gap-2">
+                        <a href="tel:+966920051554" class="hover:text-brand-gold transition-colors inline-block" dir="ltr">+966 92 005 1554</a>
+                    </p>
+                    <p class="text-brand-tealDark/80 flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-brand-green font-bold text-sm"></i>
+                        <a href="https://wa.me/966537771898" target="_blank" class="hover:text-brand-gold transition-colors inline-block" dir="ltr">+966 53 777 1898</a>
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h5 class="text-sm font-bold text-brand-tealDark mb-3 flex items-center gap-2">
+                        <i class="fas fa-envelope text-brand-gold"></i> المراسلات الرسمية
+                    </h5>
+                    <p class="text-brand-tealDark/80">
+                        <a href="mailto:gheenunited@gheene.com" class="hover:text-brand-gold transition-colors">gheenunited@gheene.com</a>
+                    </p>
+                    <p class="text-brand-tealDark/60 leading-relaxed pt-1">
+                        أُعدّ هذا المستند كمقترح تطوير رقمي تمهيدًا لاعتماد النطاق والبدء في التنفيذ.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-brand-tealDark/60 pt-2">
+                <p>جميع الحقوق محفوظة &copy; 2026 | صُنع بواسطة غين الرقمية</p>
+                <div class="flex gap-4">
+                    <a href="https://gheene.com/" target="_blank" class="hover:text-brand-gold transition-colors">الموقع الرسمي</a>
+                    <span>•</span>
+                    <span class="font-medium text-brand-tealDark/70">وكالة تسويق رقمي سعودية متكاملة</span>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
